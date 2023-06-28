@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página de inicio | GrupoCero</title>
-    <link rel="stylesheet" href="../static/build/css/app.css" />
+    <link rel="stylesheet" href="{% static 'build/css/app.css'%}" />
     
   </head>
   
@@ -17,25 +18,25 @@
         </div>-->
         <div class="barra">
           <div class="mobile-menu">
-            <img src="build/img/barras.svg" alt="icono menu responsive" />
+            <img src="{% static 'build/img/barras.svg'%}" alt="icono menu responsive" />
           </div>
 
           <div class="derecha">
-            <img class="dark-mode-boton" src="build/img/dark-mode.svg" />
+            <img class="dark-mode-boton" src="{% static 'build/img/dark-mode.svg'%}" />
             <nav class="navegacion">
-              <a href="index.html">Inicio</a>
-              <a href="nosotros.html">Nosotros</a>
-              <a href="anunciosEs.html">Esculturas</a>
-              <a href="anunciosPi.html">Pinturas</a>
-              <a href="anunciosTej.html">Tejidos</a>
-              <a href="anunciosOrf.html">Orfebrería</a>
-              <a href="blog.html">Blog</a>
-              <a href="contacto.html">Contacto</a>
+              <a href="{% url 'index' %}">Inicio</a>
+              <a href="{% url 'nosotros' %}">Nosotros</a>
+              <a href="{% url 'anunciosEs' %}">Esculturas</a>
+              <a href="{% url 'anunciosPi' %}">Pinturas</a>
+              <a href="{% url 'anunciosTej' %}">Tejidos</a>
+              <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
+              <a href="{% url 'blog' %}">Blog</a>
+              <a href="{% url 'contacto' %}">Contacto</a>
             </nav>
           </div>
         </div>
         <div class="container"> 
-            <img src="build/img/logoo.webp" alt="Logo de tu sitio web" class="logo">
+            <img src="{% static 'build/img/logoo.webp'%}" alt="Logo de tu sitio web" class="logo">
           </a>
         <!--.barra-->
 
@@ -49,7 +50,7 @@
       <div class="iconos-nosotros">
         <div class="icono">
           <img
-            src="build/img/icono1.svg"
+            src="{% static 'build/img/icono1.svg'%}"
             alt="Icono seguridad"
             loading="lazy"
           />
@@ -60,7 +61,7 @@
           </p>
         </div>
         <div class="icono">
-          <img src="build/img/icono2.svg" alt="Icono Precio" loading="lazy" />
+          <img src="{% static 'build/img/icono2.svg'%}" alt="Icono Precio" loading="lazy" />
           <h3>Precio</h3>
           <p>
             Precios acorde al mercado y a tu bolsillo, revisa nuestro catálogo
@@ -68,7 +69,7 @@
           </p>
         </div>
         <div class="icono">
-          <img src="build/img/icono3.svg" alt="Icono Tiempo" loading="lazy" />
+          <img src="{% static 'build/img/icono3.svg'%}" alt="Icono Tiempo" loading="lazy" />
           <h3>Tiempo</h3>
           <p>
             Porque nos adaptamos a tus necesidades, ve si alguna de las obras
@@ -84,16 +85,16 @@
       <div class="contenedor-anuncios">
         <div class="anuncio">
           <picture>
-            <source srcset="src/img/Escultura1.jpg" type="image/webp" />
-            <source srcset="src/img/Escultura1.jpg" type="image/jpeg" />
-            <img loading="lazy" src="src/img/Escultura1.jpg" alt="anuncio" />
+            <source srcset="{% static 'src/img/Escultura1.jpg'%}" type="image/webp" />
+            <source srcset="{% static 'src/img/Escultura1.jpg'%}" type="image/jpeg" />
+            <img loading="lazy" src="{% static 'src/img/Escultura1.jpg'%}" alt="anuncio" />
           </picture>
 
           <div class="contenido-anuncio">
             <h3>Esculturas</h3>
             <p>¡Poseemos la mejor variedad y calidad en esculturas famosas de todo el mundo!</p>
             <!-- <p class="precio">$3.000.000</p>-->
-            <a href="anunciosEs.html" class="boton-amarillo-block">
+            <a href="{% url 'anunciosEs' %}" class="boton-amarillo-block">
               Ver Productos
             </a>
           </div>
@@ -103,9 +104,9 @@
 
         <div class="anuncio">
           <picture>
-            <source srcset="src/img/Angel.jpg" type="image/webp" />
-            <source srcset="src/img/Angel.jpg" type="image/jpeg" />
-            <img loading="lazy" src="src/img/Angel.jpg"anuncio" />
+            <source srcset="{% static 'src/img/Angel.jpg'%}" type="image/webp" />
+            <source srcset="{% static 'src/img/Angel.jpg'%}" type="image/jpeg" />
+            <img loading="lazy" src="{% static 'src/img/Angel.jpg'%}"anuncio" />
           </picture>
 
           <div class="contenido-anuncio">
@@ -113,7 +114,7 @@
             <p>Pinturas de calidad, obtenidas directamente del Louvre.</p>
             <!-- <p class="precio">$3,0000,000</p>-->
 
-            <a href="anunciosPi.html" class="boton-amarillo-block">
+            <a href="{% url 'anunciosPi' %}" class="boton-amarillo-block">
               Ver Productos
             </a>
           </div>
@@ -123,16 +124,16 @@
 
         <div class="anuncio">
           <picture>
-            <source srcset="src/img/5.jpg" type="image/webp" />
-            <source srcset="src/img/5.jpg" type="image/jpeg" />
-            <img loading="lazy" src="src/img/5.jpg" alt="anuncio" />
+            <source srcset="{% static 'src/img/5.jpg'%}" type="image/webp" />
+            <source srcset="{% static 'src/img/5.jpg'%}" type="image/jpeg" />
+            <img loading="lazy" src="{% static 'src/img/5.jpg'%}" alt="anuncio" />
           </picture>
 
           <div class="contenido-anuncio">
             <h3>Tejidos</h3>
             <p>Los mejores tejidos con materiales únicos en su calidad, exportados desde todo el mundo.</p>
            <!-- <p class="precio">$3,0000,000</p>-->
-            <a href="anunciosTej.html" class="boton-amarillo-block">
+            <a href="{% url 'anunciosTej' %}" class="boton-amarillo-block">
               Ver Productos
             </a>
           </div>
@@ -141,16 +142,16 @@
 
         <div class="anuncio">
           <picture>
-            <source srcset="src/img/Tutankamon.jpg" type="image/webp" />
-            <source srcset="src/img/Tutankamon.jpg" type="image/jpeg" />
-            <img loading="lazy" src="src/img/Tutankamon.jpg" alt="anuncio" />
+            <source srcset="{% static 'src/img/Tutankamon.jpg'%}" type="image/webp" />
+            <source srcset="{% static 'src/img/Tutankamon.jpg'%}" type="image/jpeg" />
+            <img loading="lazy" src="{% static 'src/img/Tutankamon.jpg'%}" alt="anuncio" />
           </picture>
 
           <div class="contenido-anuncio">
             <h3>Orfebrería</h3>
             <p>Los mejores tejidos con materiales únicos en su calidad, exportados desde todo el mundo.</p>
            <!-- <p class="precio">$3,0000,000</p>-->
-            <a href="anunciosOrf.html" class="boton-amarillo-block">
+            <a href="{% url 'anunciosOrf' %}" class="boton-amarillo-block">
               Ver Productos
             </a>
           </div>
@@ -184,11 +185,11 @@
         <article class="entrada-blog">
           <div class="imagen">
             <picture>
-              <source srcset="src/img/Tejido2.webp" type="image/webp" />
-              <source srcset="src/img/Tejido2.webp" type="image/jpeg" />
+              <source srcset="{% static 'src/img/Tejido2.webp'%}" type="image/webp" />
+              <source srcset="{% static 'src/img/Tejido2.webp'%}" type="image/jpeg" />
               <img
                 loading="lazy"
-                src="src/img/Tejido2.webp"
+                src="{% static 'src/img/Tejido2.webp'%}"
                 alt="Texto Entrada Blog"
               />
             </picture>
@@ -212,11 +213,11 @@
         <article class="entrada-blog">
           <div class="imagen">
             <picture>
-              <source srcset="src/img/Fondo3.jpg" type="image/webp" />
-              <source srcset="src/img/Fondo3.jpg" type="image/jpeg" />
+              <source srcset="{% static 'src/img/Fondo3.jpg'%}" type="image/webp" />
+              <source srcset="{% static 'src/img/Fondo3.jpg'%}" type="image/jpeg" />
               <img
                 loading="lazy"
-                src="src/img/Fondo3.jpg"
+                src="{% static 'src/img/Fondo3.jpg'%}"
                 alt="Texto Entrada Blog"
               />
             </picture>
@@ -267,6 +268,6 @@
       <p class="copyright">Todos los derechos Reservados 2023 &copy;</p>
     </footer>
 
-    <script src="build/js/bundle.min.js"></script>
+    <script src="{% static 'build/js/bundle.min.js' %}"></script>
   </body>
 </html>

@@ -484,10 +484,10 @@ h4 {
   font-weight: 900;
 }
 .no-webp .imagen-contacto {
-  background-image: url(../img/encuentra.jpg);
+  background-image: url("{% static 'build/img/encuentra.jpg' %}");
 }
 .webp .imagen-contacto {
-  background-image: url(../img/encuentra.webp);
+  background-image: url("{% static 'build/img/encuentra.webp' %}");
 }
 .imagen-contacto {
   background-position: 50%;
@@ -554,7 +554,7 @@ h4 {
   margin-top: 1rem;
 }
 .testimonial {
-  background-color: #71b100;
+  background-color: #c77808;
   font-size: 2.4rem;
   padding: 2rem;
   color: #fff;
@@ -641,6 +641,6 @@ h4 {
 .container {
   position: relative;
   background-image: url(GrupoCero/build/img/logoo.webp);
-  
+
   background-size: cover;
 }
