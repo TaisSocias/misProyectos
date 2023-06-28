@@ -78,14 +78,14 @@
             <source srcset="{% static 'build/img/blog2.jpg'%}" type="image/jpeg" />
             <img
               loading="lazy"
-              src="build/img/blog2.jpg"
+              src="{% static 'build/img/blog2.jpg'%}"
               alt="Texto Entrada Blog">
             </img>
           </picture>
         </div>
 
         <div class="texto-entrada">
-          <a href="BlogPintura.html">
+          <a href="{% url 'BlogPintura'%}">
             <h4>Explora Tu Creatividad: Tips para la Pintura y la Expresión Artística</h4>
             <p>Escrito el: <span>22/04/1934</span> por: <span>María López Rodríguez</span></p>
 
@@ -103,14 +103,14 @@
             <source srcset="{% static 'build/img/blog3.jpg'%}" type="image/jpeg" />
             <img
               loading="lazy"
-              src="build/img/blog3.jpg"
+              src="{% static 'build/img/blog3.jpg'%}"
               alt="Texto Entrada Blog">
             </img>
           </picture>
         </div>
 
         <div class="texto-entrada">
-          <a href="BlogTejido.html">
+          <a href="{% url 'BlogTejido'%}">
             <h4> Tejiendo Belleza: El Arte del Tejido como Expresión Creativa</h4>
             <p>Escrito el: <span>15/05/2010</span> por: <span>Lucas Morales</span></p>
 
@@ -128,14 +128,14 @@
             <source srcset="{% static 'build/img/blog4.jpg'%}" type="image/jpeg" />
             <img
               loading="lazy"
-              src="build/img/blog4.jpg"
+              src="{% static 'build/img/blog4.jpg'%}"
               alt="Texto Entrada Blog">
           </img>
           </picture>
         </div>
 
         <div class="texto-entrada">
-          <a href="BlogArte.html">
+          <a href="{% url 'BlogArte'%}">
             <h4>El Arte Realista: Una Expresión de Belleza y Autenticidad</h4>
             <p>Escrito el: <span>12/02/1998</span> por: <span>María López Rodríguez</span></p>
 

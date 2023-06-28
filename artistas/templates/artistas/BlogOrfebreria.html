@@ -1,58 +1,56 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GrupoCero</title>
-    <link rel="stylesheet" href="build/css/app.css" />
+    <title>Blog de Orfebrería | GrupoCero</title>
+    <link rel="stylesheet" href="{% static 'build/css/app.css'%}" />
+    
   </head>
+  
   <body>
-    <header class="header">
+
+    <header class="header inicio">
+
       <div class="contenedor contenido-header">
+        <!--
+        </div>-->
         <div class="barra">
           <div class="mobile-menu">
-            <img src="build/img/barras.svg" alt="icono menu responsive" />
+            <img src="{% static 'build/img/barras.svg'%}" alt="icono menu responsive" />
           </div>
 
           <div class="derecha">
-            <img class="dark-mode-boton" src="build/img/dark-mode.svg" />
+            <img class="dark-mode-boton" src="{% static 'build/img/dark-mode.svg'%}" />
             <nav class="navegacion">
-              <a href="index.html">Inicio</a>
-              <a href="nosotros.html">Nosotros</a>
-              <a href="anunciosEs.html">Esculturas</a>
-              <a href="anunciosPi.html">Pinturas</a>
-              <a href="anunciosTej.html">Tejidos</a>
-              <a href="anunciosOrf.html">Orfebrería</a>
-              <a href="blog.html">Blog</a>
-              <a href="contacto.html">Contacto</a>
+              <a href="{% url 'index' %}">Inicio</a>
+              <a href="{% url 'nosotros' %}">Nosotros</a>
+              <a href="{% url 'anunciosEs' %}">Esculturas</a>
+              <a href="{% url 'anunciosPi' %}">Pinturas</a>
+              <a href="{% url 'anunciosTej' %}">Tejidos</a>
+              <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
+              <a href="{% url 'blog' %}">Blog</a>
+              <a href="{% url 'contacto' %}">Contacto</a>
             </nav>
           </div>
         </div>
-
-        <!--.barra-->
-      </div>
-      <div class="container">
-        <img
-          src="build/img/logoo.webp"
-          alt="Logo de tu sitio web"
-          class="logo"
-        />
-
-        <!--.barra-->
-      </div>
+        <div class="container"> 
+            <img src="{% static 'build/img/logoo.webp'%}" alt="Logo de tu sitio web" class="logo">
+          </a>
     </header>
 
     <main class="contenedor seccion contenido-centrado">
       <h1>
-        La Escultura: Un Viaje a Través del Tiempo y la Expresión Artística
+        El arte eterno de la orfebrería: creando belleza en metal
       </h1>
 
       <picture>
-        <source srcset="build/img/BlogEscultura.webp" type="image/webp" />
-        <source srcset="build/img/BlogEscultura.jpg" type="image/jpeg" />
+        <source srcset="{%static 'build/img/BlogEscultura.webp'%}" type="image/webp" />
+        <source srcset="{%static 'build/img/BlogEscultura.jpg'%}" type="image/jpeg" />
         <img
           loading="lazy"
-          src="build/img/destacada2.jpg"
+          src="{%static 'build/img/BlogEscultura.jpg'%}"
           alt="imagen de la propiedad"
         />
       </picture>
@@ -63,65 +61,30 @@
 
       <div class="resumen-propiedad">
         <p>
-          La escultura, una forma de arte tridimensional, ha desempeñado un
-          papel crucial en la historia de la humanidad. Desde las antiguas
-          civilizaciones hasta el arte contemporáneo, la escultura ha sido una
-          poderosa herramienta para capturar la belleza, la cultura y los
-          ideales de diferentes épocas. En esta entrada de blog, exploraremos la
-          importancia de la escultura en distintos momentos históricos, su
-          evolución a lo largo del tiempo y su impacto duradero en la expresión
-          artística.
+          La orfebrería es un antiguo y noble arte que ha fascinado a la humanidad a lo largo de los siglos. Desde los albores de la civilización, los orfebres han dado forma a metales preciosos como el oro y la plata, creando piezas de increíble belleza y valor. En este blog, exploraremos el mundo de la orfebrería, desde su historia y técnicas hasta su relevancia en la actualidad. Descubriremos cómo los orfebres contemporáneos continúan honrando y revitalizando esta ancestral forma de expresión artística.
         </p>
 
         <p>
-          Escultura en la Antigüedad: <br />La escultura tiene sus raíces en las
-          antiguas civilizaciones, como la egipcia, la griega y la romana. En
-          estas culturas, la escultura se utilizaba para representar a dioses,
-          faraones, héroes y figuras mitológicas. Estas esculturas eran
-          consideradas manifestaciones visuales de la divinidad y se creaban
-          para honrar a los seres superiores y para embellecer los espacios
-          públicos y los templos. La escultura egipcia, con sus formas rígidas y
-          estilizadas, buscaba la eternidad y la inmortalidad, mientras que la
-          escultura griega enfatizaba la perfección del cuerpo humano y
-          transmitía una sensación de movimiento y vida.
+          Desde las primeras civilizaciones de la antigüedad, como los egipcios y los sumerios, hasta los refinados diseños de las culturas griega y romana, la orfebrería ha estado presente en diversas culturas y períodos históricos. Exploraremos algunas de las técnicas y estilos más destacados de cada época, así como las simbologías y significados asociados a las piezas de orfebrería.
         </p>
 
         <p>
-          Escultura en la Edad Media y el Renacimiento: <br />Durante la Edad
-          Media, la escultura cristiana se convirtió en una forma de arte
-          dominante en Europa. Las esculturas religiosas adornaban las iglesias
-          y catedrales, representando escenas bíblicas y figuras sagradas. Estas
-          esculturas se caracterizaban por su carácter devocional y la
-          representación idealizada de las figuras divinas.
+          Sumérgete en el mundo de las técnicas utilizadas por los orfebres a lo largo del tiempo. Desde el martillado y el repujado hasta la soldadura y la filigrana, cada método implica habilidades y destrezas particulares. Exploraremos cómo se llevan a cabo estas técnicas y cómo han evolucionado con el tiempo, permitiendo a los orfebres crear piezas más complejas y detalladas.
         </p>
 
         <p>
-          El Renacimiento trajo consigo un renacimiento de las artes en Europa,
-          y la escultura floreció bajo la influencia de maestros como Donatello,
-          Miguel Ángel y Bernini. Las esculturas renacentistas, como "David" de
-          Miguel Ángel, buscaban la perfección anatómica y la representación
-          realista de las emociones humanas. La escultura renacentista fue un
-          testimonio del redescubrimiento de la antigua Grecia y Roma, y sentó
-          las bases para los movimientos artísticos posteriores.
+          La orfebrería no se limita solo a las tradicionales joyas y objetos decorativos. En la actualidad, los orfebres experimentan con nuevas formas, materiales y conceptos para crear piezas vanguardistas y únicas. Exploraremos el mundo de la joyería contemporánea y descubriremos cómo los artistas se valen de su creatividad y habilidades técnicas para desafiar las convenciones y crear obras que reflejan la individualidad y la expresión personal.
         </p>
 
         <p>
-          Escultura en la Era Moderna y Contemporánea: <br />Con el paso del
-          tiempo, la escultura ha evolucionado y experimentado cambios
-          significativos. En la era moderna, escultores como Auguste Rodin y
-          Constantin Brancusi desafiaron las convenciones tradicionales y
-          exploraron nuevas formas de expresión. La escultura moderna rompió con
-          la representación realista y se centró en la exploración de formas
-          abstractas y simbólicas.
+          En un mundo cada vez más dominado por la producción en masa y la industrialización, la orfebrería artesanal se destaca como una forma de arte valiosa y significativa. Exploraremos los beneficios y el valor de las piezas hechas a mano, desde la atención al detalle y la calidad superior hasta la conexión emocional y la sostenibilidad. También discutiremos la importancia de apoyar a los orfebres artesanales y preservar este oficio ancestral.
         </p>
 
         <p>
-          En el arte contemporáneo, la escultura se ha vuelto aún más diversa y
-          experimental. Los materiales y técnicas utilizados se han ampliado, y
-          los artistas han explorado conceptos como el espacio, la identidad y
-          la crítica social a través de sus esculturas. La escultura
-          contemporánea a menudo desafía las expectativas y puede adoptar formas
-          inusuales o utilizar materiales no convencionales
+          En este último apartado, miraremos hacia el futuro y exploraremos cómo la orfebrería está evolucionando en el siglo XXI. Desde la incorporación de tecnologías como la impresión 3D y el diseño asistido por computadora hasta la experimentación con materiales no convencionales, los orfebres contemporáneos están abriendo nuevos caminos y desafiando las fronteras del arte en metal. Descubriremos las tendencias emergentes y cómo la orfebrería continúa siendo una forma de expresión atemporal.
+        </p>
+        <p>
+          La orfebrería es un arte que ha cautivado a la humanidad durante siglos y que sigue siendo relevante y apreciado en la actualidad. Ya sea a través de piezas tradicionales o innovadoras, los orfebres siguen creando belleza en metal y transmitiendo su pasión a través de cada creación. La orfebrería no solo es una manifestación artística, sino también una forma de preservar la historia, la cultura y la artesanía. Sigamos valorando y apoyando a los orfebres, para que este noble arte perdure y continúe inspirando a las generaciones venideras.
         </p>
       </div>
     </main>
@@ -129,19 +92,20 @@
     <footer class="footer seccion">
       <div class="contenedor contenedor-footer">
         <nav class="navegacion">
-          <a href="nosotros.html">Nosotros</a>
-          <a href="anunciosEs.html">Esculturas</a>
-          <a href="anunciosPi.html">Pinturas</a>
-          <a href="anuncios.html">Tejidos</a>
-          <a href="anuncios.html">Orfebrería</a>
-          <a href="blog.html">Blog</a>
-          <a href="contacto.html">Contacto</a>
+          <a href="{% url 'index' %}">Inicio</a>
+          <a href="{% url 'nosotros' %}">Nosotros</a>
+          <a href="{% url 'anunciosEs' %}">Esculturas</a>
+          <a href="{% url 'anunciosPi' %}">Pinturas</a>
+          <a href="{% url 'anunciosTej' %}">Tejidos</a>
+          <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
+          <a href="{% url 'blog' %}">Blog</a>
+          <a href="{% url 'contacto' %}">Contacto</a>
         </nav>
       </div>
 
       <p class="copyright">Todos los derechos Reservados 2023 &copy;</p>
     </footer>
 
-    <script src="build/js/bundle.min.js"></script>
+    <script src="{% static 'build/js/bundle.min.js' %}"></script>
   </body>
 </html>
