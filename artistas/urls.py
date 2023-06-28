@@ -32,5 +32,6 @@ urlpatterns = [
     path('TejCoral', views.TejCoral, name='TejCoral'),
     path('TejCorazon', views.TejCorazon, name='TejCorazon'),
     path('TejMuralla', views.TejMuralla, name='TejMuralla'),
+    path('entrada', views.entrada, name='entrada'),
     path('listadoSQL', views.listadoSQL, name='ListadoSQL')
 ]

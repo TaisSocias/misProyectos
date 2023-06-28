@@ -159,6 +159,11 @@ def anuncio(request):
     context={"artistas":artistas}
     return render(request, 'artistas/anuncio.html ', context)
 
+def entrada(request):
+    artistas = Artista.objects.all()
+    context={"artistas":artistas}
+    return render(request, 'artistas/entrada.html ', context)
+
 def listadoSQL(request):
     artistas= Artista.objects.raw('SELECT * FROM artistas_Artista')
     print(artistas)
