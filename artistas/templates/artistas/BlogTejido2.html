@@ -1,24 +1,28 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GrupoCero</title>
-    <link rel="stylesheet" href="build/css/app.css" />
+    <title>Blog Teji2 | GrupoCero</title>
+    <link rel="stylesheet" href="{% static 'build/css/app.css'%}" />
+    
   </head>
+  
   <body>
-    <header class="header">
+
+    <header class="header inicio">
+
       <div class="contenedor contenido-header">
+        <!--
+        </div>-->
         <div class="barra">
           <div class="mobile-menu">
-            <img src="build/img/barras.svg" alt="icono menu responsive" />
+            <img src="{% static 'build/img/barras.svg'%}" alt="icono menu responsive" />
           </div>
 
           <div class="derecha">
-            <img
-              class="dark-mode-boton"
-              src="{% static 'build/img/dark-mode.svg'%}"
-            />
+            <img class="dark-mode-boton" src="{% static 'build/img/dark-mode.svg'%}" />
             <nav class="navegacion">
               <a href="{% url 'index' %}">Inicio</a>
               <a href="{% url 'nosotros' %}">Nosotros</a>
@@ -31,18 +35,9 @@
             </nav>
           </div>
         </div>
-
-        <!--.barra-->
-      </div>
-      <div class="container">
-        <img
-          src="build/img/logoo.webp"
-          alt="Logo de tu sitio web"
-          class="logo"
-        />
-
-        <!--.barra-->
-      </div>
+        <div class="container"> 
+            <img src="{% static 'build/img/logoo.webp'%}" alt="Logo de tu sitio web" class="logo">
+          </a>
     </header>
 
     <main class="contenedor seccion contenido-centrado">
