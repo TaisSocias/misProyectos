@@ -25,3 +25,19 @@ class Obra(models.Model):
     id_obra = models.AutoField(db_column='idObra', primary_key=True)
     def __str__(self):
         return str(self.id_obra)
+opciones_consultas = [
+    [0, "Pintura"],
+    [1, "Escultura"],
+    [2, "Orfebreria"],
+    [3, "Tejido"]
+]
+
+class Contacto(models.Model):
+    nombre = models.CharField(max_lenght=50)
+    correo = models.EmailField()
+    tipo_arte = models.IntegerField(choices=opciones_consultas)
+    mensaje = models.TextField()
+    avisos = models.BooleanField()
+
+    def _str_(self):
+        return self.nombre
