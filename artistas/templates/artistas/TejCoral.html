@@ -15,18 +15,21 @@
           </div>
 
           <div class="derecha">
-            <img class="dark-mode-boton" src="build/img/dark-mode.svg">
+            <img
+              class="dark-mode-boton"
+              src="{% static 'build/img/dark-mode.svg'%}"
+            />
             <nav class="navegacion">
-              <a href="index.html">Inicio</a>
-              <a href="nosotros.html">Nosotros</a>
-              <a href="anunciosEs.html">Esculturas</a>
-              <a href="anunciosPi.html">Pinturas</a>
-              <a href="anunciosTej.html">Tejidos</a>
-              <a href="anunciosOrf.html">Orfebrería</a>
-              <a href="blog.html">Blog</a>
-              <a href="contacto.html">Contacto</a>
+              <a href="{% url 'index' %}">Inicio</a>
+              <a href="{% url 'nosotros' %}">Nosotros</a>
+              <a href="{% url 'anunciosEs' %}">Esculturas</a>
+              <a href="{% url 'anunciosPi' %}">Pinturas</a>
+              <a href="{% url 'anunciosTej' %}">Tejidos</a>
+              <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
+              <a href="{% url 'blog' %}">Blog</a>
+              <a href="{% url 'contacto' %}">Contacto</a>
             </nav>
-        </div>
+          </div>
         </div>
         <!--.barra-->
       </div>
@@ -45,7 +48,15 @@
         <p class="precio">$10,000</p>
 
         <p>
-          De ser considerado un arte menor en el pasado, en este siglo, el arte textil está viviendo una edad dorada. Prueba de ello es la profusión de artistas contemporáneos que abrazan técnicas y materiales vinculados con estas prácticas ancestrales, que durante siglos estuvieron circunscritas a los ámbitos domésticos, de la artesanía y de las artes y oficios. Hasta hace pocos años apasionaba sólo a un grupo de entendidos, pero ahora atrae el interés de coleccionistas, artistas, museos, y galerías.       </p>
+          De ser considerado un arte menor en el pasado, en este siglo, el arte
+          textil está viviendo una edad dorada. Prueba de ello es la profusión
+          de artistas contemporáneos que abrazan técnicas y materiales
+          vinculados con estas prácticas ancestrales, que durante siglos
+          estuvieron circunscritas a los ámbitos domésticos, de la artesanía y
+          de las artes y oficios. Hasta hace pocos años apasionaba sólo a un
+          grupo de entendidos, pero ahora atrae el interés de coleccionistas,
+          artistas, museos, y galerías.
+        </p>
       </div>
     </main>
 
@@ -53,12 +64,12 @@
       <div class="contenedor contenedor-footer">
         <nav class="navegacion">
           <a href="nosotros.html">Nosotros</a>
-                <a href="anunciosEs.html">Esculturas</a>
-                <a href="anunciosPi.html">Pinturas</a>
-                <a href="anuncios.html">Tejidos</a>
-                <a href="anuncios.html">Orfebrería</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
+          <a href="anunciosEs.html">Esculturas</a>
+          <a href="anunciosPi.html">Pinturas</a>
+          <a href="anuncios.html">Tejidos</a>
+          <a href="anuncios.html">Orfebrería</a>
+          <a href="blog.html">Blog</a>
+          <a href="contacto.html">Contacto</a>
         </nav>
       </div>
 

@@ -133,6 +133,7 @@ def BlogTejido2(request):
     artistas = Artista.objects.all()
     context={"artistas":artistas}
     return render(request, 'artistas/BlogTejido2.html ', context)
+
 def BlogPintura(request):
     artistas = Artista.objects.all()
     context={"artistas":artistas}

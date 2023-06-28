@@ -1,77 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Esculturas | GrupoCero</title>
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="build/css/app.css" />
+  </head>
+  <body>
     <header class="header">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-               
-                <div class="mobile-menu">
-                    <img src="build/img/barras.svg" alt="icono menu responsive">
-                </div>
+      <div class="contenedor contenido-header">
+        <div class="barra">
+          <div class="mobile-menu">
+            <img src="build/img/barras.svg" alt="icono menu responsive" />
+          </div>
 
-                <div class="derecha">
-                    <img class="dark-mode-boton" src="build/img/dark-mode.svg">
-                    <nav class="navegacion">
-                        <a href="index.html">Inicio</a>
-                        <a href="nosotros.html">Nosotros</a>
-                        <a href="anunciosEs.html">Esculturas</a>
-                        <a href="anunciosPi.html">Pinturas</a>
-                        <a href="anunciosTej.html">Tejidos</a>
-                        <a href="anunciosOrf.html">Orfebrería</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="contacto.html">Contacto</a>
-                    </nav>
-                </div>
-                
-            </div> <!--.barra-->
+          <div class="derecha">
+            <img
+              class="dark-mode-boton"
+              src="{% static 'build/img/dark-mode.svg'%}"
+            />
+            <nav class="navegacion">
+              <a href="{% url 'index' %}">Inicio</a>
+              <a href="{% url 'nosotros' %}">Nosotros</a>
+              <a href="{% url 'anunciosEs' %}">Esculturas</a>
+              <a href="{% url 'anunciosPi' %}">Pinturas</a>
+              <a href="{% url 'anunciosTej' %}">Tejidos</a>
+              <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
+              <a href="{% url 'blog' %}">Blog</a>
+              <a href="{% url 'contacto' %}">Contacto</a>
+            </nav>
+          </div>
         </div>
+        <!--.barra-->
+      </div>
     </header>
 
     <main class="contenedor seccion">
+      <h2>Esculturas en venta</h2>
 
-        <h2>Esculturas en venta</h2>
+      <div class="contenedor-anuncios">
+        <div class="anuncio">
+          <picture>
+            <source srcset="build/img/anuncio1.webp" type="image/webp" />
+            <source srcset="build/img/anuncio1.jpg" type="image/jpeg" />
+            <img loading="lazy" src="build/img/anuncio1.jpg" alt="anuncio" />
+          </picture>
 
-        <div class="contenedor-anuncios">
-            <div class="anuncio">
-                <picture>
-                    <source srcset="build/img/anuncio1.webp" type="image/webp">
-                    <source srcset="build/img/anuncio1.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/anuncio1.jpg" alt="anuncio">
-                </picture>
+          <div class="contenido-anuncio">
+            <h3>Cristo Redentor</h3>
+            <p>
+              Escultura de 30m, pedestal de 8m. Es la cuarta escultura de Jesús
+              más grande en el mundo.
+            </p>
+            <p class="precio">$15,000,000</p>
+            <br /><br /><br />
 
-                <div class="contenido-anuncio">
-                    <h3>Cristo Redentor</h3>
-                    <p>Escultura de 30m, pedestal de 8m. Es la cuarta escultura de Jesús más grande en el mundo.</p>
-                    <p class="precio">$15,000,000</p>
-                    <br><br><br>
+            <a href="EsCristo.html" class="boton-amarillo-block">
+              Ver Escultura
+            </a>
+          </div>
+          <!--.contenido-anuncio-->
+        </div>
+        <!--anuncio-->
 
+        <div class="anuncio">
+          <picture>
+            <source srcset="build/img/anuncio2.webp" type="image/webp" />
+            <source srcset="build/img/anuncio2.jpg" type="image/jpeg" />
+            <img loading="lazy" src="build/img/anuncio2.jpg" alt="anuncio" />
+          </picture>
 
-                    <a href="EsCristo.html" class="boton-amarillo-block">
-                        Ver Escultura
-                    </a>
-                </div><!--.contenido-anuncio-->
-            </div><!--anuncio-->
-
-            <div class="anuncio">
-                <picture>
-                    <source srcset="build/img/anuncio2.webp" type="image/webp">
-                    <source srcset="build/img/anuncio2.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/anuncio2.jpg" alt="anuncio">
-                </picture>
-
-                <div class="contenido-anuncio">
-                    <h3>David de Miguel Angel</h3>
-                    <p>El David es una escultura de mármol blanco de 5,17 metros de altura y 5572 kilogramos de masa.</p>
-                    <p class="precio">$7,000,000</p>
-                    <br><br><br>
-                    <!--<ul class="iconos-caracteristicas">
+          <div class="contenido-anuncio">
+            <h3>David de Miguel Angel</h3>
+            <p>
+              El David es una escultura de mármol blanco de 5,17 metros de
+              altura y 5572 kilogramos de masa.
+            </p>
+            <p class="precio">$7,000,000</p>
+            <br /><br /><br />
+            <!--<ul class="iconos-caracteristicas">
                         <li>
                             <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
                             <p>3</p>
@@ -86,25 +93,32 @@
                         </li>
                     </ul>-->
 
-                    <a href="EsDavid.html" class="boton-amarillo-block">
-                        Ver Escultura
-                    </a>
-                </div><!--.contenido-anuncio-->
-            </div><!--anuncio-->
+            <a href="EsDavid.html" class="boton-amarillo-block">
+              Ver Escultura
+            </a>
+          </div>
+          <!--.contenido-anuncio-->
+        </div>
+        <!--anuncio-->
 
-            <div class="anuncio">
-                <picture>
-                    <source srcset="build/img/anuncio3.webp" type="image/webp">
-                    <source srcset="build/img/anuncio3.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/anuncio3.jpg" alt="anuncio">
-                </picture>
+        <div class="anuncio">
+          <picture>
+            <source srcset="build/img/anuncio3.webp" type="image/webp" />
+            <source srcset="build/img/anuncio3.jpg" type="image/jpeg" />
+            <img loading="lazy" src="build/img/anuncio3.jpg" alt="anuncio" />
+          </picture>
 
-                <div class="contenido-anuncio">
-                    <h3>Esfinge de Giza</h3>
-               <!---->     <p>La Gran Esfinge de Guiza es una escultura monumental que se encuentra en la ribera occidental del río Nilo, en la ciudad de Guiza.</p>
-                    <p class="precio">$45,000,000</p>
-<br><br>
-                  <!--  <ul class="iconos-caracteristicas">
+          <div class="contenido-anuncio">
+            <h3>Esfinge de Giza</h3>
+            <!---->
+            <p>
+              La Gran Esfinge de Guiza es una escultura monumental que se
+              encuentra en la ribera occidental del río Nilo, en la ciudad de
+              Guiza.
+            </p>
+            <p class="precio">$45,000,000</p>
+            <br /><br />
+            <!--  <ul class="iconos-caracteristicas">
                         <li>
                             <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
                             <p>3</p>
@@ -119,26 +133,31 @@
                         </li>
                     </ul>
                 -->
-                    <a href="EsEsfinge.html" class="boton-amarillo-block">
-                        Ver Escultura
-                    </a>
-                </div><!--.contenido-anuncio-->
-            </div><!--anuncio-->
+            <a href="EsEsfinge.html" class="boton-amarillo-block">
+              Ver Escultura
+            </a>
+          </div>
+          <!--.contenido-anuncio-->
+        </div>
+        <!--anuncio-->
 
-            <div class="anuncio">
-                <picture>
-                    <source srcset="build/img/anuncio4.webp" type="image/webp">
-                    <source srcset="build/img/anuncio4.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/anuncio4.jpg" alt="anuncio">
-                </picture>
+        <div class="anuncio">
+          <picture>
+            <source srcset="build/img/anuncio4.webp" type="image/webp" />
+            <source srcset="build/img/anuncio4.jpg" type="image/jpeg" />
+            <img loading="lazy" src="build/img/anuncio4.jpg" alt="anuncio" />
+          </picture>
 
-                <div class="contenido-anuncio">
-                    <h3>Estatua de la libertad</h3>
-                    <p>La Libertad iluminando el mundo, más conocida como la Estatua de la Libertad, es de las más famosas de Nueva York.</p>
-                    <p class="precio">$25,000,000</p>
-                    <br><br>
+          <div class="contenido-anuncio">
+            <h3>Estatua de la libertad</h3>
+            <p>
+              La Libertad iluminando el mundo, más conocida como la Estatua de
+              la Libertad, es de las más famosas de Nueva York.
+            </p>
+            <p class="precio">$25,000,000</p>
+            <br /><br />
 
-                 <!--   <ul class="iconos-caracteristicas">
+            <!--   <ul class="iconos-caracteristicas">
                         <li>
                             <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
                             <p>3</p>
@@ -153,25 +172,30 @@
                         </li>
                     </ul>-->
 
-                    <a href="EsEstatua.html" class="boton-amarillo-block">
-                        Ver escultura
-                    </a>
-                </div><!--.contenido-anuncio-->
-            </div><!--anuncio-->
+            <a href="EsEstatua.html" class="boton-amarillo-block">
+              Ver escultura
+            </a>
+          </div>
+          <!--.contenido-anuncio-->
+        </div>
+        <!--anuncio-->
 
-            <div class="anuncio">
-                <picture>
-                    <source srcset="build/img/anuncio5.webp" type="image/webp">
-                    <source srcset="build/img/anuncio5.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/anuncio5.jpg" alt="anuncio">
-                </picture>
+        <div class="anuncio">
+          <picture>
+            <source srcset="build/img/anuncio5.webp" type="image/webp" />
+            <source srcset="build/img/anuncio5.jpg" type="image/jpeg" />
+            <img loading="lazy" src="build/img/anuncio5.jpg" alt="anuncio" />
+          </picture>
 
-                <div class="contenido-anuncio">
-                    <h3>La Sirenita</h3>
-                    <p>La Sirenita (en danés Den lille havfrue) es una escultura de una sirena de bronce, que se encuentra en la ciudad de Copenhague.</p>
-                    <p class="precio">$3,500,000</p>
-                    <br><br>
-  <!--                  <ul class="iconos-caracteristicas">
+          <div class="contenido-anuncio">
+            <h3>La Sirenita</h3>
+            <p>
+              La Sirenita (en danés Den lille havfrue) es una escultura de una
+              sirena de bronce, que se encuentra en la ciudad de Copenhague.
+            </p>
+            <p class="precio">$3,500,000</p>
+            <br /><br />
+            <!--                  <ul class="iconos-caracteristicas">
                         <li>
                             <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
                             <p>3</p>
@@ -186,27 +210,32 @@
                         </li>
                     </ul>-->
 
-                    <a href="EsSirena.html" class="boton-amarillo-block">
-                        Ver Escultura
-                    </a>
-                </div><!--.contenido-anuncio-->
-            </div><!--anuncio-->
+            <a href="EsSirena.html" class="boton-amarillo-block">
+              Ver Escultura
+            </a>
+          </div>
+          <!--.contenido-anuncio-->
+        </div>
+        <!--anuncio-->
 
-            <div class="anuncio">
-                <picture>
-                    <source srcset="build/img/anuncio6.webp" type="image/webp">
-                    <source srcset="build/img/anuncio6.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/anuncio6.jpg" alt="anuncio">
-                </picture>
+        <div class="anuncio">
+          <picture>
+            <source srcset="build/img/anuncio6.webp" type="image/webp" />
+            <source srcset="build/img/anuncio6.jpg" type="image/jpeg" />
+            <img loading="lazy" src="build/img/anuncio6.jpg" alt="anuncio" />
+          </picture>
 
-                <div class="contenido-anuncio">
-                    <h3>Venus de Milo</h3>
-                    <p>La Afrodita de Milo, o Venus de Milo, es una escultura griega famosa, sale en los Simpson.</p>
-                    <p class="precio">$100,000,000</p>
-                    <br>
-                    <br>
-                    <br>
-   <!--                 <ul class="iconos-caracteristicas">
+          <div class="contenido-anuncio">
+            <h3>Venus de Milo</h3>
+            <p>
+              La Afrodita de Milo, o Venus de Milo, es una escultura griega
+              famosa, sale en los Simpson.
+            </p>
+            <p class="precio">$100,000,000</p>
+            <br />
+            <br />
+            <br />
+            <!--                 <ul class="iconos-caracteristicas">
                         <li>
                             <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
                             <p>3</p>
@@ -221,31 +250,33 @@
                         </li>
                     </ul>
 -->
-                    <a href="EsVenus.html" class="boton-amarillo-block">
-                        Ver Escultura
-                    </a>
-                </div><!--.contenido-anuncio-->
-            </div><!--anuncio-->
-
-        </div> <!--.contenedor-anuncios-->
+            <a href="EsVenus.html" class="boton-amarillo-block">
+              Ver Escultura
+            </a>
+          </div>
+          <!--.contenido-anuncio-->
+        </div>
+        <!--anuncio-->
+      </div>
+      <!--.contenedor-anuncios-->
     </main>
 
     <footer class="footer seccion">
-        <div class="contenedor contenedor-footer">
-            <nav class="navegacion">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anunciosEs.html">Esculturas</a>
-                <a href="anunciosPi.html">Pinturas</a>
-                <a href="anuncios.html">Tejidos</a>
-                <a href="anuncios.html">Orfebrería</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
-        </div>
+      <div class="contenedor contenedor-footer">
+        <nav class="navegacion">
+          <a href="nosotros.html">Nosotros</a>
+          <a href="anunciosEs.html">Esculturas</a>
+          <a href="anunciosPi.html">Pinturas</a>
+          <a href="anuncios.html">Tejidos</a>
+          <a href="anuncios.html">Orfebrería</a>
+          <a href="blog.html">Blog</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
 
-        <p class="copyright">Todos los derechos Reservados 2021 &copy;</p>
+      <p class="copyright">Todos los derechos Reservados 2021 &copy;</p>
     </footer>
 
     <script src="build/js/bundle.min.js"></script>
-</body>
+  </body>
 </html>
