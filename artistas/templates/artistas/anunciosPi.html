@@ -8,19 +8,13 @@
     <link rel="stylesheet" href="{% static 'build/css/app.css'%}" />
     
   </head>
-  
   <body>
-
     <header class="header inicio">
-
       <div class="contenedor contenido-header">
-        <!--
-        </div>-->
         <div class="barra">
           <div class="mobile-menu">
             <img src="{% static 'build/img/barras.svg'%}" alt="icono menu responsive" />
           </div>
-
           <div class="derecha">
             <img class="dark-mode-boton" src="{% static 'build/img/dark-mode.svg'%}" />
             <nav class="navegacion">
@@ -38,8 +32,6 @@
         <div class="container"> 
             <img src="{% static 'build/img/logoo.webp'%}" alt="Logo de tu sitio web" class="logo">
           </a>
-        <!--.barra-->
-
     </header>
 
     <main class="contenedor seccion">
@@ -60,7 +52,7 @@
                     <p class="precio">$550,000</p>
                     <br><br><br>
 
-                    <a href="Pimona.html" class="boton-amarillo-block">
+                    <a href="{%url 'Pimona'%}" class="boton-amarillo-block">
                         Ver Pintura
                     </a>
                 </div><!--.contenido-anuncio-->
@@ -79,7 +71,7 @@
                     
                     <p class="precio">$34,000,000</p>
                     <br><br>
-                    <a href="PiNoche.html" class="boton-amarillo-block">
+                    <a href="{%url 'PiNoche'%}" class="boton-amarillo-block">
                         Ver Pintura
                     </a>
                 </div><!--.contenido-anuncio-->
@@ -98,7 +90,7 @@
                 <br>   
                <p class="precio">$100,000,000</p>
 <br><br><br><br>
-                    <a href="PiSwing.html" class="boton-amarillo-block">
+                    <a href="{%url 'PiSwing'%}" class="boton-amarillo-block">
                         Ver Pintura
                     </a>
 

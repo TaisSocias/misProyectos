@@ -4,23 +4,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tejidos artísticos | GrupoCero</title>
+    <title>Tejidos | GrupoCero</title>
     <link rel="stylesheet" href="{% static 'build/css/app.css'%}" />
     
   </head>
-  
   <body>
-
     <header class="header inicio">
-
       <div class="contenedor contenido-header">
-        <!--
-        </div>-->
         <div class="barra">
           <div class="mobile-menu">
             <img src="{% static 'build/img/barras.svg'%}" alt="icono menu responsive" />
           </div>
-
           <div class="derecha">
             <img class="dark-mode-boton" src="{% static 'build/img/dark-mode.svg'%}" />
             <nav class="navegacion">
@@ -38,8 +32,6 @@
         <div class="container"> 
             <img src="{% static 'build/img/logoo.webp'%}" alt="Logo de tu sitio web" class="logo">
           </a>
-        <!--.barra-->
-
     </header>
 
     <main class="contenedor seccion">
@@ -60,7 +52,7 @@
                     <p class="precio">$10,000</p>
                     <br>
 
-                    <a href="TejCoral.html" class="boton-amarillo-block">
+                    <a href="{%url 'TejCoral'%}" class="boton-amarillo-block">
                         Ver Tejido
                     </a>
                 </div><!--.contenido-anuncio-->
@@ -80,7 +72,7 @@
                     <p class="precio">$11,000</p>
                     <br>
 
-                    <a href="TejMuralla.html" class="boton-amarillo-block">
+                    <a href="{%url 'TejMuralla'%}" class="boton-amarillo-block">
                         Ver Tejido
                     </a>
                 </div><!--.contenido-anuncio-->
@@ -98,7 +90,7 @@
                     <p class="precio">$13,000</p>
                     <br><br><br>
 
-                    <a href="TejCorazon.html" class="boton-amarillo-block">
+                    <a href="{%url 'TejCorazon'%}" class="boton-amarillo-block">
                         Ver Tejido
                     </a>
 
