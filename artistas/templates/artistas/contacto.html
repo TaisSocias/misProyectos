@@ -1,19 +1,24 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto | GrupoCero</title>
-    <link rel="stylesheet" href="build/css/app.css" />
+    <link rel="stylesheet" href="{% static 'build/css/app.css'%}" />
+    
   </head>
+  
   <body>
+
     <header class="header inicio">
+
       <div class="contenedor contenido-header">
+        <!--
+        </div>-->
         <div class="barra">
-
-
           <div class="mobile-menu">
-            <img src="build/img/barras.svg" alt="icono menu responsive" />
+            <img src="{% static 'build/img/barras.svg'%}" alt="icono menu responsive" />
           </div>
 
           <div class="derecha">
@@ -29,13 +34,12 @@
               <a href="{% url 'contacto' %}">Contacto</a>
             </nav>
           </div>
-        
         </div>
         <div class="container"> 
-          <img src="build/img/logoo.webp" alt="Logo de tu sitio web" class="logo">
-
+            <img src="{% static 'build/img/logoo.webp'%}" alt="Logo de tu sitio web" class="logo">
+          </a>
         <!--.barra-->
-      </div>
+
     </header>
 
     <main class="contenedor seccion">
@@ -118,26 +122,21 @@
       <br>
       <br>
       <picture>
-        <source srcset="src/img/FondoBanner2.webp" type="image/webp" />
-        <source srcset="src/img/FondoBanner2.jpg" type="image/jpeg" />
-        <img
-          loading="lazy"
-          src="src/img/FondoBanner2.jpg"
-          alt="Imagen Contacto"
-        />
-      </picture>
+
     </main>
 
     <footer class="footer seccion">
       <div class="contenedor contenedor-footer">
         <nav class="navegacion">
           <a href="nosotros.html">Nosotros</a>
-                <a href="anunciosEs.html">Esculturas</a>
-                <a href="anunciosPi.html">Pinturas</a>
-                <a href="anuncios.html">Tejidos</a>
-                <a href="anuncios.html">Orfebrería</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
+          <a href="{% url 'index' %}">Inicio</a>
+          <a href="{% url 'nosotros' %}">Nosotros</a>
+          <a href="{% url 'anunciosEs' %}">Esculturas</a>
+          <a href="{% url 'anunciosPi' %}">Pinturas</a>
+          <a href="{% url 'anunciosTej' %}">Tejidos</a>
+          <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
+          <a href="{% url 'blog' %}">Blog</a>
+          <a href="{% url 'contacto' %}">Contacto</a>
         </nav>
         
       </div>
@@ -145,6 +144,6 @@
       <p class="copyright">Todos los derechos Reservados 2023 &copy;</p>
     </footer>
 
-    <script src="build/js/bundle.min.js"></script>
+    <script src="{% static 'build/js/bundle.min.js' %}"></script>
   </body>
 </html>

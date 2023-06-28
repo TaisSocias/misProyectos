@@ -1,36 +1,45 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pintura | GrupoCero</title>
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pinturas | GrupoCero</title>
+    <link rel="stylesheet" href="{% static 'build/css/app.css'%}" />
     
-    <header class="header">
-        <div class="contenedor contenido-header">
-            <div class="barra">
+  </head>
+  
+  <body>
 
-                <div class="mobile-menu">
-                    <img src="build/img/barras.svg" alt="icono menu responsive">
-                </div>
+    <header class="header inicio">
 
-                <<div class="derecha">
-                    <img class="dark-mode-boton" src="{% static 'build/img/dark-mode.svg'%}" />
-                    <nav class="navegacion">
-                      <a href="{% url 'index' %}">Inicio</a>
-                      <a href="{% url 'nosotros' %}">Nosotros</a>
-                      <a href="{% url 'anunciosEs' %}">Esculturas</a>
-                      <a href="{% url 'anunciosPi' %}">Pinturas</a>
-                      <a href="{% url 'anunciosTej' %}">Tejidos</a>
-                      <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
-                      <a href="{% url 'blog' %}">Blog</a>
-                      <a href="{% url 'contacto' %}">Contacto</a>
-                    </nav>
-                  </div>
+      <div class="contenedor contenido-header">
+        <!--
+        </div>-->
+        <div class="barra">
+          <div class="mobile-menu">
+            <img src="{% static 'build/img/barras.svg'%}" alt="icono menu responsive" />
+          </div>
 
+          <div class="derecha">
+            <img class="dark-mode-boton" src="{% static 'build/img/dark-mode.svg'%}" />
+            <nav class="navegacion">
+              <a href="{% url 'index' %}">Inicio</a>
+              <a href="{% url 'nosotros' %}">Nosotros</a>
+              <a href="{% url 'anunciosEs' %}">Esculturas</a>
+              <a href="{% url 'anunciosPi' %}">Pinturas</a>
+              <a href="{% url 'anunciosTej' %}">Tejidos</a>
+              <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
+              <a href="{% url 'blog' %}">Blog</a>
+              <a href="{% url 'contacto' %}">Contacto</a>
+            </nav>
+          </div>
         </div>
+        <div class="container"> 
+            <img src="{% static 'build/img/logoo.webp'%}" alt="Logo de tu sitio web" class="logo">
+          </a>
+        <!--.barra-->
+
     </header>
 
     <main class="contenedor seccion">
@@ -40,9 +49,9 @@
         <div class="contenedor-anuncios">
             <div class="anuncio">
                 <picture>
-                    <source srcset="build/img/anuncio31.webp" type="image/webp">
-                    <source srcset="build/img/anuncio31.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/anuncio31.jpg" alt="anuncio">
+                    <source srcset="{% static 'build/img/anuncio31.webp' %}" type="image/webp" />
+                    <source srcset="{% static 'build/img/anuncio31.jpg' %}" type="image/jpeg" />
+                    <img loading="lazy" src="{% static 'build/img/anuncio31.jpg' %}" alt="anuncio" />
                 </picture>
 
                 <div class="contenido-anuncio">
@@ -59,9 +68,9 @@
 
             <div class="anuncio">
                 <picture>
-                    <source srcset="build/img/anuncio32.webp" type="image/webp">
-                    <source srcset="build/img/destacada32.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/destacada32.jpg" alt="anuncio">
+                    <source srcset="{% static 'build/img/anuncio32.webp' %}" type="image/webp" />
+                    <source srcset="{% static 'build/img/anuncio32.jpg' %}" type="image/jpeg" />
+                    <img loading="lazy" src="{% static 'build/img/anuncio32.jpg' %}" alt="anuncio" />
                 </picture>
 
                 <div class="contenido-anuncio">
@@ -78,9 +87,9 @@
 
             <div class="anuncio">
                 <picture>
-                    <source srcset="build/img/anuncio33.webp" type="image/webp">
-                    <source srcset="build/img/anuncio33.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/anuncio33.jpg" alt="anuncio">
+                    <source srcset="{% static 'build/img/anuncio33.webp' %}" type="image/webp" />
+                    <source srcset="{% static 'build/img/anuncio33.jpg' %}" type="image/jpeg" />
+                    <img loading="lazy" src="{% static 'build/img/anuncio33.jpg' %}" alt="anuncio" />
                 </picture>
 
                 <div class="contenido-anuncio">
@@ -98,19 +107,20 @@
     <footer class="footer seccion">
         <div class="contenedor contenedor-footer">
             <nav class="navegacion">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anunciosEs.html">Esculturas</a>
-                <a href="anunciosPi.html">Pinturas</a>
-                <a href="anuncios.html">Tejidos</a>
-                <a href="anuncios.html">Orfebrería</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
+                <a href="{% url 'index' %}">Inicio</a>
+                <a href="{% url 'nosotros' %}">Nosotros</a>
+                <a href="{% url 'anunciosEs' %}">Esculturas</a>
+                <a href="{% url 'anunciosPi' %}">Pinturas</a>
+                <a href="{% url 'anunciosTej' %}">Tejidos</a>
+                <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
+                <a href="{% url 'blog' %}">Blog</a>
+                <a href="{% url 'contacto' %}">Contacto</a>
             </nav>
         </div>
 
         <p class="copyright">Todos los derechos Reservados 2021 &copy;</p>
     </footer>
 
-    <script src="build/js/bundle.min.js"></script>
+    <script src="{% static 'build/js/bundle.min.js' %}"></script>
 </body>
 </html>
