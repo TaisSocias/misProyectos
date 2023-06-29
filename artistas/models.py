@@ -27,17 +27,18 @@ class Obra(models.Model):
     def __str__(self):
         return str(self.id_obra)
 
-opciones_consulta = {
+opciones_consulta = [
     [0, "Pintura"],
     [1, "Escultura"],
     [2, "Tejido"],
     [3, "Orfebreria"]
-}
+]
 class Contacto(models.Model):
     nombre = models.CharField(max_length=50)
     correo = models.EmailField()
     telefono = models.CharField(max_length=45)
-    tipo_obra = models.IntegerField()
+    tipo_obra = models.IntegerField(choices=opciones_consulta)
+    mensaje = models.TextField()
     avisos = models.BooleanField()
 
     def _str(self):

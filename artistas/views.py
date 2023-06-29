@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Artista,Especialidad, Obra
-
+from .forms import ContactoForm
 # Create your views here.
 
 # vistas del menú
@@ -169,3 +169,9 @@ def listadoSQL(request):
     print(artistas)
     context={"artistas":artistas}
     return render(request, 'artistas/index.html', context)
+
+def contacto(request):
+    data = {
+        'form': ContactoForm()
+    }
+    return render(request, 'artistas/contacto.html', data)
