@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Artista,Especialidad, Obra
-
+from .models import Artista,Especialidad, Obra, Contacto
+from .forms import ContactoForm, ObraForm
 # Create your views here.
 
 # vistas del menú
@@ -74,20 +74,20 @@ def Pimona(request):
     context={"artistas":artistas}
     return render(request, 'artistas/Pimona.html ', context)
 
-def OrfTutanmamon(request):
+def OfTutanmamon(request):
     artistas = Artista.objects.all()
     context={"artistas":artistas}
-    return render(request, 'artistas/OrfTutanmamon.html ', context)
+    return render(request, 'artistas/OfTutanmamon.html ', context)
 
-def OrfRam(request):
+def OfRam(request):
     artistas = Artista.objects.all()
     context={"artistas":artistas}
-    return render(request, 'artistas/OrfRam.html ', context)
+    return render(request, 'artistas/OfRam.html ', context)
 
-def OrfMaikol(request):
+def OfMaikol(request):
     artistas = Artista.objects.all()
     context={"artistas":artistas}
-    return render(request, 'artistas/OrfMaikol.html ', context)
+    return render(request, 'artistas/OfMaikol.html ', context)
 
 def EsVenus(request):
     artistas = Artista.objects.all()
@@ -169,3 +169,40 @@ def listadoSQL(request):
     print(artistas)
     context={"artistas":artistas}
     return render(request, 'artistas/index.html', context)
+
+def contacto(request):
+    data = {
+        'form': ContactoForm()
+    }
+
+    if request.method == 'POST':
+        formulario = ContactoForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Consulta enviada"
+        else:
+            data["form"] = formulario
+    return render(request, 'artistas/contacto.html', data)
+
+def agregar_obra(request):
+
+    data = {
+        'form': ObraForm()
+    }
+
+    if request.method == 'POST':
+        formulario = ObraForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Obra guardada correctamente"
+        else:
+            data["form"] = formulario
+    return render(request, 'artistas/agregar.html', data)
+
+def listar_obra(request):
+    obra = Obra.objects.all()
+
+    data = {
+        'obra' : obra
+    }
+    return render(request, 'artistas/listar.html', data)

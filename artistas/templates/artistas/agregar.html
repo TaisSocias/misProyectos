@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | GrupoCero</title>
+  <link rel="stylesheet" href="{% static 'build/css/app.css'%}" />
+</head>
+<body>
+  <header class="header inicio">
+    <div class="contenedor contenido-header">
+      <div class="barra">
+
+
+        <div class="mobile-menu">
+          <img src="{% static 'build/img/barras.svg' %}" alt="icono menu responsive" />
+        </div>
+
+        <div class="derecha">
+          <img class="dark-mode-boton" src="{% static 'build/img/dark-mode.svg'%}" />
+          <nav class="navegacion">
+            <a href="{% url 'index' %}">Inicio</a>
+            <a href="{% url 'nosotros' %}">Nosotros</a>
+            <a href="{% url 'anunciosEs' %}">Esculturas</a>
+            <a href="{% url 'anunciosPi' %}">Pinturas</a>
+            <a href="{% url 'anunciosTej' %}">Tejidos</a>
+            <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
+            <a href="{% url 'blog' %}">Blog</a>
+            <a href="{% url 'contacto' %}">Contacto</a>
+          </nav>
+        </div>
+      
+      </div>
+      <div class="container"> 
+        <img src="{% static 'build/img/logoo.webp' %}" alt="Logo de tu sitio web" class="logo">
+
+      <!--.barra-->
+    </div>
+  </header>
+
+  <main class="contenedor seccion">
+
+    <h1>Agegar Obras</h1>
+
+
+
+    <h2>LLene este formulario para agregar una nueva obra</h2>
+
+    <form class="formulario" method ="post" enctype="multipart/form-data">
+      
+      {% csrf_token %}
+    
+      {{ form }}
+
+      
+      <br>
+      <button type="submit" value="Guardar" class="boton-verde">Guardar</button>
+      <br>
+      <button type="reset" value="Cancelar" class="boton-verde">Cancelar</button>
+    </form>
+
+    {{mensaje}}
+
+    <br>
+    <br>
+    <picture>
+      <source srcset="{% static 'src/img/FondoBanner2.webp' %}" type="image/webp" />
+      <source srcset="{% static 'src/img/FondoBanner2.jpg' %}" type="image/jpeg" />
+      <img
+        loading="lazy"
+        src="{% static 'src/img/FondoBanner2.jpg' %}"
+        alt="Imagen Contacto"
+      />
+    </picture>
+  </main>
+
+  <footer class="footer seccion">
+    <div class="contenedor contenedor-footer">
+      <nav class="navegacion">
+        <a href="nosotros.html">Nosotros</a>
+        <a href="{% url 'index' %}">Inicio</a>
+        <a href="{% url 'nosotros' %}">Nosotros</a>
+        <a href="{% url 'anunciosEs' %}">Esculturas</a>
+        <a href="{% url 'anunciosPi' %}">Pinturas</a>
+        <a href="{% url 'anunciosTej' %}">Tejidos</a>
+        <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
+        <a href="{% url 'blog' %}">Blog</a>
+        <a href="{% url 'contacto' %}">Contacto</a>
+      </nav>
+      
+    </div>
+
+    <p class="copyright">Todos los derechos Reservados 2023 &copy;</p>
+  </footer>
+
+  <script src="{% static 'build/js/bundle.min.js' %}"></script>
+</body>
+</html>

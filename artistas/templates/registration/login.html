@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página de inicio | GrupoCero</title>
+    <link rel="stylesheet" href="{% static 'build/css/app.css'%}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  
+  </head>
+  
+  <body>
+
+    <header class="header inicio">
+
+      <div class="contenedor contenido-header">
+        <!--
+        </div>-->
+        <div class="barra">
+          <div class="mobile-menu">
+            <img src="{% static 'build/img/barras.svg'%}" alt="icono menu responsive" />
+          </div>
+
+          <div class="derecha">
+            <img class="dark-mode-boton" src="{% static 'build/img/dark-mode.svg'%}" />
+            <nav class="navegacion">
+              <a href="{% url 'index' %}">Inicio</a>
+              <a href="{% url 'nosotros' %}">Nosotros</a>
+              <a href="{% url 'anunciosEs' %}">Esculturas</a>
+              <a href="{% url 'anunciosPi' %}">Pinturas</a>
+              <a href="{% url 'anunciosTej' %}">Tejidos</a>
+              <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
+              <a href="{% url 'blog' %}">Blog</a>
+              <a href="{% url 'contacto' %}">Contacto</a>
+            </nav>
+          </div>
+        </div>
+        <div class="container"> 
+            <img src="{% static 'build/img/logoo.webp'%}" alt="Logo de tu sitio web" class="logo">
+          </a>
+        <!--.barra-->
+          <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 offset-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>Ingresa tus credenciales</h2>
+                            <hr>
+                            <form class="formulario" method ="post">
+      
+                                {% csrf_token %}
+                              
+                                {{ form }}
+                          
+                                
+                                <br>
+                                <button type="submit" value="Login" class="boton-verde" />Iniciar Sesión</button>
+                                <br>
+                                <button type="reset" value="Cancelar" class="boton-verde" />Cancelar</button>
+                              </form>
+                          
+                              {{mensaje}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    <footer class="footer seccion">
+      <div class="contenedor contenedor-footer">
+        <nav class="navegacion">
+          <a href="nosotros.html">Nosotros</a>
+                <a href="anunciosEs.html">Esculturas</a>
+                <a href="anunciosPi.html">Pinturas</a>
+                <a href="anunciosTej.html">Tejidos</a>
+                <a href="anunciosOrf.html">Orfebrería</a>
+                <a href="blog.html">Blog</a>
+                <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+
+      <p class="copyright">Todos los derechos Reservados 2023 &copy;</p>
+    </footer>
+
+    <script src="{% static 'build/js/bundle.min.js' %}"></script>
+  </body>
+</html>
