@@ -74,20 +74,20 @@ def Pimona(request):
     context={"artistas":artistas}
     return render(request, 'artistas/Pimona.html ', context)
 
-def OfTutanmamon(request):
+def OrfTutanmamon(request):
     artistas = Artista.objects.all()
     context={"artistas":artistas}
-    return render(request, 'artistas/OfTutanmamon.html ', context)
+    return render(request, 'artistas/OrfTutanmamon.html ', context)
 
-def OfRam(request):
+def OrfRam(request):
     artistas = Artista.objects.all()
     context={"artistas":artistas}
-    return render(request, 'artistas/OfRam.html ', context)
+    return render(request, 'artistas/OrfRam.html ', context)
 
-def OfMaikol(request):
+def OrfMaikol(request):
     artistas = Artista.objects.all()
     context={"artistas":artistas}
-    return render(request, 'artistas/OfMaikol.html ', context)
+    return render(request, 'artistas/OrfMaikol.html ', context)
 
 def EsVenus(request):
     artistas = Artista.objects.all()
