@@ -22,22 +22,23 @@ class Obra(models.Model):
     nombre_obra = models.CharField(max_length=40)
     id_especialidad = models.ForeignKey(Especialidad, on_delete=models.CASCADE, db_column='idEspecialidad')
     id_artista = models.ForeignKey(Artista, db_column='idArtista', on_delete=models.CASCADE)
-    id_obra = models.AutoField(db_column='idObra', primary_key=True)
+    id_obra = models.AutoField(db_column='idObra', primary_key=True) 
+    imagen = models.ImageField(upload_to='obras', null=True) 
     def __str__(self):
         return str(self.id_obra)
-opciones_consultas = [
+
+opciones_consulta = {
     [0, "Pintura"],
     [1, "Escultura"],
-    [2, "Orfebreria"],
-    [3, "Tejido"]
-]
-
+    [2, "Tejido"],
+    [3, "Orfebreria"]
+}
 class Contacto(models.Model):
-    nombre = models.CharField(max_lenght=50)
+    nombre = models.CharField(max_length=50)
     correo = models.EmailField()
-    tipo_arte = models.IntegerField(choices=opciones_consultas)
-    mensaje = models.TextField()
+    telefono = models.CharField(max_length=45)
+    tipo_obra = models.IntegerField()
     avisos = models.BooleanField()
 
-    def _str_(self):
+    def _str(self):
         return self.nombre
