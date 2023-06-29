@@ -21,6 +21,7 @@ class Artista(models.Model):
 class Obra(models.Model):
     nombre_obra = models.CharField(max_length=40)
     id_especialidad = models.ForeignKey(Especialidad, on_delete=models.CASCADE, db_column='idEspecialidad')
+    precio = models.FloatField()
     id_artista = models.ForeignKey(Artista, db_column='idArtista', on_delete=models.CASCADE)
     id_obra = models.AutoField(db_column='idObra', primary_key=True) 
     imagen = models.ImageField(upload_to='obras', null=True) 
@@ -38,7 +39,7 @@ class Contacto(models.Model):
     correo = models.EmailField()
     telefono = models.CharField(max_length=45)
     tipo_obra = models.IntegerField(choices=opciones_consulta)
-    mensaje = models.TextField()
+    mensaje = models.TextField
     avisos = models.BooleanField()
 
     def _str(self):

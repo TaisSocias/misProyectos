@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 {% load static %}
+{% load humanize %}
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto | GrupoCero</title>
   <link rel="stylesheet" href="{% static 'build/css/app.css'%}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  
 </head>
 <body>
   <header class="header inicio">
@@ -41,38 +44,31 @@
 
   <main class="contenedor seccion">
 
-    <h1>Contacto</h1>
+    <h1>Listado de Obras</h1>
 
 
 
-    <h2>Llene el formulario de Contacto</h2>
+    <h2>Aquí puede ver un listado de todas las obras disponibles</h2>
+    <hr>
+    <div class="card">
+    <table class="table table-striped table-hover table-responsive-sm">
+    <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Tipo de obra</th>
+    </tr>
 
-    <form class="formulario" method ="post">
+    {% for o in obra %}
 
-      {% csrf_token %}
-    
-      {{ form }}
-
-      
-      <br>
-      <button type="submit" value="Enviar" class="boton-verde" />Enviar</button>
-      <br>
-      <button type="reset" value="Cancelar" class="boton-verde" />Cancelar</button>
-    </form>
-
-    {{mensaje}}
-
+    <tr>
+        <td>{{ o.nombre | title }}</td>
+        <td>{{ o.precio | intcomma }}</td>
+        <td>{{ o.Tipo | title }}</td>
+    </tr>
+    {% endfor %}
+</div>
+    </table>
     <br>
-    <br>
-    <picture>
-      <source srcset="{% static 'src/img/FondoBanner2.webp' %}" type="image/webp" />
-      <source srcset="{% static 'src/img/FondoBanner2.jpg' %}" type="image/jpeg" />
-      <img
-        loading="lazy"
-        src="{% static 'src/img/FondoBanner2.jpg' %}"
-        alt="Imagen Contacto"
-      />
-    </picture>
   </main>
 
   <footer class="footer seccion">

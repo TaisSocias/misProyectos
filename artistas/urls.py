@@ -33,5 +33,8 @@ urlpatterns = [
     path('TejCorazon', views.TejCorazon, name='TejCorazon'),
     path('TejMuralla', views.TejMuralla, name='TejMuralla'),
     path('entrada', views.entrada, name='entrada'),
-    path('listadoSQL', views.listadoSQL, name='ListadoSQL')
+    path('listadoSQL', views.listadoSQL, name='ListadoSQL'),
+    path('agregar-obra', views.agregar_obra, name='agregar_obra'),
+    path('listar-obra', views.listar_obra, name='listar_obra')
 ]
+

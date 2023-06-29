@@ -41,21 +41,21 @@
 
   <main class="contenedor seccion">
 
-    <h1>Contacto</h1>
+    <h1>Agegar Obras</h1>
 
 
 
-    <h2>Llene el formulario de Contacto</h2>
+    <h2>LLene este formulario para agregar una nueva obra</h2>
 
-    <form class="formulario" method ="post">
-
+    <form class="formulario" method ="post" enctype="multipart/form-data">
+      
       {% csrf_token %}
     
       {{ form }}
 
       
       <br>
-      <button type="submit" value="Enviar" class="boton-verde" />Enviar</button>
+      <button type="submit" value="Guardar" class="boton-verde" />Guardar</button>
       <br>
       <button type="reset" value="Cancelar" class="boton-verde" />Cancelar</button>
     </form>

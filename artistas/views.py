@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Artista,Especialidad, Obra
-from .forms import ContactoForm
+from .models import Artista,Especialidad, Obra, Contacto
+from .forms import ContactoForm, ObraForm
 # Create your views here.
 
 # vistas del menú
@@ -174,4 +174,35 @@ def contacto(request):
     data = {
         'form': ContactoForm()
     }
+
+    if request.method == 'POST':
+        formulario = ContactoForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Consulta enviada"
+        else:
+            data["form"] = formulario
     return render(request, 'artistas/contacto.html', data)
+
+def agregar_obra(request):
+
+    data = {
+        'form': ObraForm()
+    }
+
+    if request.method == 'POST':
+        formulario = ObraForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Obra guardada correctamente"
+        else:
+            data["form"] = formulario
+    return render(request, 'artistas/agregar.html', data)
+
+def listar_obra(request):
+    obra = Obra.objects.all()
+
+    data = {
+        'obra' : obra
+    }
+    return render(request, 'artistas/listar.html', data)
