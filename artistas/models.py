@@ -24,7 +24,6 @@ class Obra(models.Model):
     precio = models.FloatField()
     id_artista = models.ForeignKey(Artista, db_column='idArtista', on_delete=models.CASCADE)
     id_obra = models.AutoField(db_column='idObra', primary_key=True) 
-    imagen = models.ImageField(upload_to='obras', null=True) 
     def __str__(self):
         return str(self.id_obra)
 
