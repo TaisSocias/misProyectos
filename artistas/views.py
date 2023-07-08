@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Artista,Especialidad, Obra, Contacto
 from .forms import ContactoForm, ObraForm
 # Create your views here.
@@ -206,3 +206,24 @@ def listar_obra(request):
         'obra' : obra
     }
     return render(request, 'artistas/listar.html', data)
+
+def modificar_obra(request, id):
+    nombre_obra = get_object_or_404(Obra, id_obra=id)
+
+    data = {
+        'form': ObraForm(instance=nombre_obra)
+    }
+
+    if request.method == 'POST':
+        formulario = ObraForm(data=request.POST, instance=nombre_obra, files=request.FILES)  # Corregir esta línea
+        if formulario.is_valid():
+            formulario.save()
+            return redirect(to="listar_obra")
+        data["form"] = formulario
+
+    return render(request, 'artistas/modificar.html', data)
+
+def eliminar_obra(request, id):
+    nombre_obra = get_object_or_404(Obra, id_obra=id)
+    nombre_obra.delete()
+    return redirect(to="listar_obra")

@@ -29,8 +29,10 @@
             <a href="{% url 'anunciosPi' %}">Pinturas</a>
             <a href="{% url 'anunciosTej' %}">Tejidos</a>
             <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
-            <a href="{% url 'blog' %}">Blog</a>
-            <a href="{% url 'contacto' %}">Contacto</a>
+              <a href="{% url 'agregar_obra' %}">Agregar</a>
+              <a href="{% url 'listar_obra' %}">Listar</a>
+              <a href="{% url 'login' %}">Iniciar Sesión</a>
+              <a href="{% url 'logout' %}">Cerrar Sesión</a>
           </nav>
         </div>
       
@@ -56,6 +58,7 @@
         <th>Nombre</th>
         <th>Precio</th>
         <th>Tipo de obra</th>
+        <th>Opciones</th>
     </tr>
 
     {% for o in obra %}
@@ -64,6 +67,8 @@
         <td>{{ o.nombre | title }}</td>
         <td>{{ o.precio | intcomma }}</td>
         <td>{{ o.Tipo | title }}</td>
+        <td><a href="{% url 'modificar_obra' o.id_obra %}" class="btn btn-info">Modificar</a></td>
+        <td><a href="{% url 'eliminar_obra' o.id_obra %}" class="btn btn-danger">Eliminar</a></td>
     </tr>
     {% endfor %}
 </div>

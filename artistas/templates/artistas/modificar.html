@@ -26,8 +26,10 @@
             <a href="{% url 'anunciosPi' %}">Pinturas</a>
             <a href="{% url 'anunciosTej' %}">Tejidos</a>
             <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
-            <a href="{% url 'blog' %}">Blog</a>
-            <a href="{% url 'contacto' %}">Contacto</a>
+              <a href="{% url 'agregar_obra' %}">Agregar</a>
+              <a href="{% url 'listar_obra' %}">Listar</a>
+              <a href="{% url 'login' %}">Iniciar Sesión</a>
+              <a href="{% url 'logout' %}">Cerrar Sesión</a>
           </nav>
         </div>
       
@@ -41,11 +43,11 @@
 
   <main class="contenedor seccion">
 
-    <h1>Agegar Obras</h1>
+    <h1>Modificar Obras</h1>
 
 
 
-    <h2>LLene este formulario para agregar una nueva obra</h2>
+    <h2>LLene este formulario para modificar una obra</h2>
 
     <form class="formulario" method ="post" enctype="multipart/form-data">
       

@@ -18,15 +18,17 @@
           <div class="derecha">
             <img class="dark-mode-boton" src="{% static 'build/img/dark-mode.svg'%}" />
             <nav class="navegacion">
-              <a href="{% url 'index' %}">Inicio</a>
-              <a href="{% url 'nosotros' %}">Nosotros</a>
-              <a href="{% url 'anunciosEs' %}">Esculturas</a>
-              <a href="{% url 'anunciosPi' %}">Pinturas</a>
-              <a href="{% url 'anunciosTej' %}">Tejidos</a>
-              <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
-              <a href="{% url 'blog' %}">Blog</a>
-              <a href="{% url 'contacto' %}">Contacto</a>
-            </nav>
+                <a href="{% url 'index' %}">Inicio</a>
+                <a href="{% url 'nosotros' %}">Nosotros</a>
+                <a href="{% url 'anunciosEs' %}">Esculturas</a>
+                <a href="{% url 'anunciosPi' %}">Pinturas</a>
+                <a href="{% url 'anunciosTej' %}">Tejidos</a>
+                <a href="{% url 'anunciosOrf' %}">Orfebrería</a>
+                  <a href="{% url 'agregar_obra' %}">Agregar</a>
+                  <a href="{% url 'listar_obra' %}">Listar</a>
+                  <a href="{% url 'login' %}">Iniciar Sesión</a>
+                  <a href="{% url 'logout' %}">Cerrar Sesión</a>
+              </nav>
           </div>
         </div>
         <div class="container"> 
