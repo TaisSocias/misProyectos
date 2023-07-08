@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 {% load static %}
 {% load humanize %}
+
+{% block js %}
+  <script>
+    function eliminarObra(id_obra) {
+      Swal.fire({
+        "title" : "¿Estás seguro?",
+        "text" : "Esta acción no se puede deshacer, te lo juro por Dieguito Maradona",
+        "icon" : "question",
+        "showCancelButton":true,
+        "cancelButtonText" : "No, cancelar",
+        "confirmButtonText" : "Si, eliminar",
+        "reverseButtons" :true,
+        "confirmButtonColor" : "green",
+        "cancelButtonColor" : "#dc3545",
+      })
+      .then(function(result) {
+          if(result.isConfirmed) {
+            window.location.href = "eliminar-obra/"+id_obra+"/"
+          }
+      })
+    }
+  </script>
+{% endblock %}
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -58,21 +81,24 @@
         <th>Nombre</th>
         <th>Precio</th>
         <th>Tipo de obra</th>
+        <th>Artista</th>
         <th>Opciones</th>
     </tr>
 
     {% for o in obra %}
 
     <tr>
-        <td>{{ o.nombre | title }}</td>
+        <td>{{ o.nombre_obra | title }}</td>
         <td>{{ o.precio | intcomma }}</td>
-        <td>{{ o.Tipo | title }}</td>
+        <td>{{ o.id_especialidad | title }}</td>
+        <td>{{ o.id_artista | title }}</td>
         <td><a href="{% url 'modificar_obra' o.id_obra %}" class="btn btn-info">Modificar</a></td>
-        <td><a href="{% url 'eliminar_obra' o.id_obra %}" class="btn btn-danger">Eliminar</a></td>
+        <td><a href="#" onclick="eliminarObra ({{ o.id_obra }})" class="btn btn-danger">Eliminar</a></td>
     </tr>
     {% endfor %}
 </div>
     </table>
+    
     <br>
   </main>
 
@@ -96,5 +122,17 @@
   </footer>
 
   <script src="{% static 'build/js/bundle.min.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  {% if messages %}
+  {% for m in messages %}
+    <script>
+      Swal.fire({
+        "title": "Felicitaciones",
+        "text" : "{{m}}",
+        "icon" : "success"
+      })
+    </script>
+  {% endfor %}
+{% endif %}
 </body>
 </html>

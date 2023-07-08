@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Artista,Especialidad, Obra, Contacto
 from .forms import ContactoForm, ObraForm
+from django.contrib import messages
 # Create your views here.
 
 # vistas del menú
@@ -194,7 +195,8 @@ def agregar_obra(request):
         formulario = ObraForm(data=request.POST, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
-            data["mensaje"] = "Obra guardada correctamente"
+            messages.success(request, "Obra agregada correctamente")
+            return redirect(to="listar_obra")
         else:
             data["form"] = formulario
     return render(request, 'artistas/agregar.html', data)
@@ -218,6 +220,7 @@ def modificar_obra(request, id):
         formulario = ObraForm(data=request.POST, instance=nombre_obra, files=request.FILES)  # Corregir esta línea
         if formulario.is_valid():
             formulario.save()
+            messages.success(request, "Obra modificada correctamente")
             return redirect(to="listar_obra")
         data["form"] = formulario
 
@@ -226,4 +229,5 @@ def modificar_obra(request, id):
 def eliminar_obra(request, id):
     nombre_obra = get_object_or_404(Obra, id_obra=id)
     nombre_obra.delete()
+    messages.success(request, "Obra eliminada correctamente")
     return redirect(to="listar_obra")
