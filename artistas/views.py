@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Artista,Especialidad, Obra, Contacto
-from .forms import ContactoForm, ObraForm
+from .forms import ContactoForm, ObraForm, CustomUserCreationForm
 from django.contrib import messages
+from django.contrib.auth import authenticate, login
 # Create your views here.
 
 # vistas del menú
@@ -231,3 +232,18 @@ def eliminar_obra(request, id):
     nombre_obra.delete()
     messages.success(request, "Obra eliminada correctamente")
     return redirect(to="listar_obra")
+
+def registro(request):
+    data = {
+        'form': CustomUserCreationForm()
+    }
+    if request.method == 'POST':
+        formulario = CustomUserCreationForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            user = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
+            login(request, user)
+            messages.success(request, "Ha sido registrado exitosamente")
+            return redirect(to="index")
+        data["form"] = formulario
+    return render(request, 'registration/registro.html', data)

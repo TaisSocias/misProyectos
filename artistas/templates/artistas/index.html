@@ -22,8 +22,7 @@
           </div>
 
           <div class="derecha">
-            <img class="dark-mode-boton" src="{% static 'build/img/dark-mode.svg'%}" />
-            <nav class="navegacion">
+              <nav class="navegacion">
               <a href="{% url 'index' %}">Inicio</a>
               <a href="{% url 'nosotros' %}">Nosotros</a>
               <a href="{% url 'anunciosEs' %}">Esculturas</a>
@@ -34,12 +33,14 @@
                 <a href="{% url 'listar_obra' %}">Listar</a>
                 <a href="{% url 'login' %}">Iniciar Sesión</a>
                 <a href="{% url 'logout' %}">Cerrar Sesión</a>
+                <br><img class="dark-mode-boton" src="{% static 'build/img/dark-mode.svg'%}" />
+          
             </nav>
           </div>
         </div>
         <div class="container"> 
             <img src="{% static 'build/img/logoo.webp'%}" alt="Logo de tu sitio web" class="logo">
-          </a>
+
         <!--.barra-->
 
         <h1>Venta de distintos tipos de arte</h1>
